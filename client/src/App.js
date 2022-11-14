@@ -5,14 +5,11 @@ import Login from "./components/Login";
 
 function App() {
 
-  const [userInfo, setUserInfo] = useState({
-    email: "",
-    password: "",
-  })
   const [error, setError] = useState("")
 
 
   const login = (userDetails) => {
+    
     console.log(userDetails)
   }
 
@@ -22,7 +19,7 @@ function App() {
   
   return (
     <div className="App">
-      <Login />
+      <Login login={login} error={error}/>
     </div>
   );
 }
