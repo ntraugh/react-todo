@@ -1,6 +1,9 @@
 import React, {useEffect, useRef, useState} from 'react'
+import {useNavigate} from "react-router-dom"
 
 const Login = ({login, error, setError}) => {
+    const navigate = useNavigate()
+
     const [userInfo, setUserInfo] = useState({
         email: "",
         password: "",
@@ -14,8 +17,8 @@ const Login = ({login, error, setError}) => {
     
     const handleSubmit = (e) => {
         e.preventDefault()
-        
         login(userInfo)
+        navigate("todo")
     }
 
     const handleChange =(e) => {
@@ -33,11 +36,11 @@ const Login = ({login, error, setError}) => {
     }
 
   return (
-    <form onSubmit={handleSubmit}>
-        <div>
+    <form onSubmit={handleSubmit} className="form">
+        <div className='center-form'>
             <h2>Rapptr Labs</h2>
             <div>
-                <label htmlFor='email'>Email</label>
+                <label htmlFor='email' style={{"fontWeight": "bold"}}>Email: </label>
                 <input 
                 required
                 onChange={handleChange}
@@ -49,7 +52,7 @@ const Login = ({login, error, setError}) => {
                 {error && <p style={{"color": "red"}}>{error}</p>}
             </div>
             <div>
-                <label htmlFor='password'>Password</label>
+                <label htmlFor='password' style={{"fontWeight": "bold"}}>Password: </label>
                 <input 
                 required
                 onChange={(e) => setUserInfo({...userInfo, password: e.target.value})}
