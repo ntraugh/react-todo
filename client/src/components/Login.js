@@ -4,7 +4,6 @@ import {FaUserAlt, FaLock} from "react-icons/fa"
 
 const Login = ({login, error, setError}) => {
     const navigate = useNavigate()
-
     const [userInfo, setUserInfo] = useState({
         email: "",
         password: "",
@@ -47,7 +46,7 @@ const Login = ({login, error, setError}) => {
                 required
                 onChange={handleChange}
                 value={userInfo.email}
-                placeholder="test@rapptrlabs.com" 
+                placeholder="user@rapptrlabs.com" 
                 type="email" name="email" 
                 id="email" 
                 ref={inputRef}></input>
@@ -65,7 +64,7 @@ const Login = ({login, error, setError}) => {
                 name="password" 
                 id="password"></input>
             </div>
-            {!error && <button style={{marginTop: "1rem"}}>Login</button>}
+            {!error && <button style={{marginTop: "1rem", width: "25%"}}>Login</button>}
                 
         </div>
 

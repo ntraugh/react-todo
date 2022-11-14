@@ -80,8 +80,9 @@ const Todo = () => {
   return (
     <>
       <button 
+      className='logout-button'
       onClick={logout}
-      style={{float: "right", margin: "1rem 1rem", width: "5%"}}>Logout</button>
+      style={{float: "right", margin: "1rem 1rem"}}>Logout</button>
       <section className="whole-form">
         <form onSubmit={handleSubmit} className="form-info">
           <h3 style={{marginBottom: "1.5rem", textAlign: "center"}}>My To-Do List</h3>

@@ -1,8 +1,6 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: 'Montserrat', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -105,13 +103,6 @@ button:hover {
   box-shadow: #0b131c 0px 0px 0px 0px, #3ec7f4 0px 0px 0px 0px, #0b131c 0px 1px 1px 0px,  #3ec7f4 0px 0px 0px 1px,  #3ec7f4 0px 0px 0px 0px,#0b131c 0px 3px 9px 0px, #0b131c 0px 2px 5px 0px;
 }
 
-@media only screen and (min-width: 1000px) {
-  .whole-form{
-    width: 50%;
-    margin-left: 25rem;
-  }
-} 
-
 input {
   
   width: 80%;
@@ -122,12 +113,28 @@ input {
   border-radius: 4px;
   padding: 8px 16px;
   border: 2px solid transparent;
-  box-shadow: rgb(0 0 0 / 12%) 0px 1px 3px, rgb(0 0 0 / 24%) 0px 1px 2px;
+  box-shadow: #0b131c  1px 1px 1px, #0b131c  0px 1px 2px;
   background: rgb(251, 251, 251);
   transition: all 0.1s ease 0s;
   
 
 }
+
+@media only screen and (min-width: 1000px) {
+  .whole-form{
+    width: 50%;
+    margin-left: 25rem;
+  }
+  
+} 
+
+@media only screen and (max-width: 1000px) {
+  .logout-button {
+    width: auto;
+  }
+}
+
+
 
 
 

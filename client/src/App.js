@@ -12,7 +12,7 @@ function App() {
 
   const [error, setError] = useState(null)
 
-
+  // POST REQUEST GIVING A CORS ERROR
   const login = async (userDetails) => {
     const response = await axios.post("http://dev.rapptrlabs.com/Tests/scripts/user-login.php", userDetails)
       .then(userData => setUserInfo({email: userData.email, password: userData.password}))
