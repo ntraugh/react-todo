@@ -1,5 +1,6 @@
 import React, {useEffect, useRef, useState} from 'react'
 import {useNavigate} from "react-router-dom"
+import {FaUserAlt, FaLock} from "react-icons/fa"
 
 const Login = ({login, error, setError}) => {
     const navigate = useNavigate()
@@ -41,6 +42,7 @@ const Login = ({login, error, setError}) => {
             <h2>Rapptr Labs</h2>
             <div>
                 <label htmlFor='email' style={{"fontWeight": "bold"}}>Email: </label>
+                <FaUserAlt style={{paddingRight: ".5rem"}}/>
                 <input 
                 required
                 onChange={handleChange}
@@ -53,6 +55,7 @@ const Login = ({login, error, setError}) => {
             </div>
             <div>
                 <label htmlFor='password' style={{"fontWeight": "bold"}}>Password: </label>
+                <FaLock style={{paddingRight: ".5rem"}}/>
                 <input 
                 required
                 onChange={(e) => setUserInfo({...userInfo, password: e.target.value})}

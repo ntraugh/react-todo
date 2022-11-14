@@ -15,12 +15,13 @@ code {
 .form {
   padding: 2rem;
   width: 50%;
-  margin: auto auto;
+  margin: 10rem auto;
   color: #0b131c;
   background-color: #3ec7f4;
   border: 1px solid rgba(104, 85, 224, 1);
   border-radius: 4px;
   box-shadow: 5px 5px 5px #0b131c;
+  
 }
 
 .edit-button, 
@@ -32,6 +33,66 @@ code {
   margin: 0 .1rem;
   transition: all 0.5 linear;
 }
+
+.whole-form {
+  border: 2px solid #3ec7f4;
+  border-radius: 4px;
+  padding: 2rem;
+}
+
+.alert-danger {
+  background-color: red;
+  color: white;
+  width: 25%;
+  margin: 1rem auto;
+  border-radius: 4px;
+  padding: .25rem;
+
+}
+
+.alert-success {
+  background-color: green;
+  color: white;
+  width: 25%;
+  margin: 1rem auto;
+  border-radius: 4px;
+  padding: .25rem;
+
+}
+
+.form-info {
+
+}
+
+.form-items {
+  border: 1px solid black;
+  border-radius: 4px;
+  padding: 1rem;
+}
+
+.center-button {
+  margin: auto;
+  width: 50%;
+  padding: 10px
+}
+
+.todo-input {
+  margin: auto auto;
+  display: flex;
+  justify-content: center;
+}
+
+li {
+  list-style: none;
+}
+
+
+
+
+
+
+
+
 
 
 

@@ -73,27 +73,27 @@ const Todo = () => {
 
   return (
     <>
-      <section>
-        <form onSubmit={handleSubmit}>
-          {alert.show && <Alert {...alert} removeAlert={showAlert} list={list} />}
+      <section className="whole-form">
+        <form onSubmit={handleSubmit} className="form-info">
           <h3 style={{marginBottom: "1.5rem", textAlign: "center"}}>My To-Do List</h3>
-          <div className="">
+          <div className="todo-input">
             <input 
             onChange={(e) => setName(e.target.value)}
             value={name}
             type="text" 
-            className="todo-input" 
+            className="" 
             placeholder="Create a todo item!">
             </input>
             <button type="submit">
               {isEditing ? "Edit" : "Submit"}
             </button>
           </div>
+          {alert.show && <Alert {...alert} removeAlert={showAlert} list={list} />}
         </form>
         {list.length > 0 && (
-          <div style={{marginTop: "2rem"}}>
+          <div style={{marginTop: "2rem"}} className="form-items">
             <TodoList items={list} removeItem={removeItem} editItem={editItem} />
-            <div>
+            <div className="center-button">
               <button onClick={clearList}>Clear Items</button>
             </div>
           </div>
