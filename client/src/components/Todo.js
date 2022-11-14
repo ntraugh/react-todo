@@ -1,13 +1,26 @@
-import React, {useState, useEfect} from 'react'
+import React, {useState, useEffect} from 'react'
 import TodoList from "./TodoList"
 import Alert from "./Alert"
 
+const getLocalStorageItems = () => {
+  let list = localStorage.getItem("list")
+  if(list) {
+    return (list = JSON.parse(localStorage.getItem("list")))
+  }
+  else {
+    return []
+  }
+
+}
+
 const Todo = () => {
   const [name, setName] = useState([])
-  const [list, setList] = useState([])
+  const [list, setList] = useState(getLocalStorageItems())
   const [isEditing, setIsEditing] = useState(false)
   const [editId, setEditId] = useState(null)
   const [alert, setAlert] = useState({show: false, message: "", type: ""})
+
+
 
   const handleSubmit = (e) => {
     e.preventDefault()
@@ -37,18 +50,26 @@ const Todo = () => {
 
   const showAlert = (show=false, type="", message="") => {
     setAlert({show, type, message})
-    
-  }
-  const editItem = () => {
 
   }
-  const removeItem = () => {
-
+  const editItem = (id) => {
+    const itemToEdit = list.find((item) => item.id === id)
+    setIsEditing(true)
+    setEditId(id)
+    setName(editItem.title)
+  }
+  const removeItem = (id) => {
+    showAlert(true, "danger", "Item Removed")
+    setList(list.filter((item) => item.id !== id))
   }
   const clearList = () => {
-
+    showAlert(true, "danger", "Items cleared!")
+    setList([])
   }
 
+  useEffect(() => {
+    localStorage.setItem("list", JSON.stringify(list))
+  }, [list])
 
   return (
     <>
