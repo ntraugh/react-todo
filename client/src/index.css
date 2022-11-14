@@ -35,7 +35,6 @@ code {
 }
 
 .whole-form {
-  border: 2px solid #3ec7f4;
   border-radius: 4px;
   padding: 2rem;
 }
@@ -61,7 +60,6 @@ code {
 }
 
 .form-info {
-
 }
 
 .form-items {
@@ -71,9 +69,9 @@ code {
 }
 
 .center-button {
-  margin: auto;
-  width: 50%;
-  padding: 10px
+  display: flex;
+  justify-content: center;
+  
 }
 
 .todo-input {
@@ -86,6 +84,50 @@ li {
   list-style: none;
 }
 
+
+button {
+  border: 0;
+  /* width: 25%; */
+  outline: 0;
+  cursor: pointer;
+  color: #3ec7f4;
+  background-color: #0b131c;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 500;
+  padding: 4px 8px;
+  display: inline-block;
+  min-height: 28px;
+  transition: background-color .24s,box-shadow .24s;
+}
+
+button:hover {
+  box-shadow: #0b131c 0px 0px 0px 0px, #3ec7f4 0px 0px 0px 0px, #0b131c 0px 1px 1px 0px,  #3ec7f4 0px 0px 0px 1px,  #3ec7f4 0px 0px 0px 0px,#0b131c 0px 3px 9px 0px, #0b131c 0px 2px 5px 0px;
+}
+
+@media only screen and (min-width: 1000px) {
+  .whole-form{
+    width: 50%;
+    margin-left: 25rem;
+  }
+} 
+
+input {
+  
+  width: 80%;
+  color: rgb(36, 35, 42);
+  font-size: 16px;
+  line-height: 20px;
+  min-height: 28px;
+  border-radius: 4px;
+  padding: 8px 16px;
+  border: 2px solid transparent;
+  box-shadow: rgb(0 0 0 / 12%) 0px 1px 3px, rgb(0 0 0 / 24%) 0px 1px 2px;
+  background: rgb(251, 251, 251);
+  transition: all 0.1s ease 0s;
+  
+
+}
 
 
 

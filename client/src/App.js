@@ -22,12 +22,7 @@ function App() {
     console.log(userDetails)
   }
 
-  const logout = () => {
-    setUserInfo({
-      email: "",
-      password: "",
-    })
-  }
+  
   
   return (
     <div className="App">

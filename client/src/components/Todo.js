@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react'
 import TodoList from "./TodoList"
 import Alert from "./Alert"
+import {useNavigate} from "react-router-dom"
 
 const getLocalStorageItems = () => {
   let list = localStorage.getItem("list")
@@ -19,7 +20,7 @@ const Todo = () => {
   const [isEditing, setIsEditing] = useState(false)
   const [editId, setEditId] = useState(null)
   const [alert, setAlert] = useState({show: false, message: "", type: ""})
-
+  const navigate = useNavigate()
 
 
   const handleSubmit = (e) => {
@@ -56,7 +57,7 @@ const Todo = () => {
     const itemToEdit = list.find((item) => item.id === id)
     setIsEditing(true)
     setEditId(id)
-    setName(editItem.title)
+    setName(itemToEdit.title)
   }
   const removeItem = (id) => {
     showAlert(true, "danger", "Item Removed")
@@ -67,12 +68,20 @@ const Todo = () => {
     setList([])
   }
 
+  const logout = () => {
+    navigate("/")
+    // we would also setUserInfo({ email: "", password: ""})
+  }
+
   useEffect(() => {
     localStorage.setItem("list", JSON.stringify(list))
   }, [list])
 
   return (
     <>
+      <button 
+      onClick={logout}
+      style={{float: "right", margin: "1rem 1rem", width: "5%"}}>Logout</button>
       <section className="whole-form">
         <form onSubmit={handleSubmit} className="form-info">
           <h3 style={{marginBottom: "1.5rem", textAlign: "center"}}>My To-Do List</h3>
@@ -84,20 +93,23 @@ const Todo = () => {
             className="" 
             placeholder="Create a todo item!">
             </input>
-            <button type="submit">
-              {isEditing ? "Edit" : "Submit"}
+            <button type="submit" style={{width: "25%"}}>
+              {isEditing ? "Edit" : "Add"}
             </button>
           </div>
           {alert.show && <Alert {...alert} removeAlert={showAlert} list={list} />}
         </form>
-        {list.length > 0 && (
+        {list.length > 0 ? (
           <div style={{marginTop: "2rem"}} className="form-items">
             <TodoList items={list} removeItem={removeItem} editItem={editItem} />
             <div className="center-button">
-              <button onClick={clearList}>Clear Items</button>
+              <button 
+              style={{width: "25%", padding:".5rem"}}
+              onClick={clearList}>Clear Items</button>
             </div>
           </div>
-        )}
+        ) : <p 
+        style={{display: "flex", justifyContent: "center"}}>Add something to do!</p>}
       </section>
     </>
   )

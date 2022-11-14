@@ -53,7 +53,7 @@ const Login = ({login, error, setError}) => {
                 ref={inputRef}></input>
                 {error && <p style={{"color": "red"}}>{error}</p>}
             </div>
-            <div>
+            <div style={{marginTop: "1rem"}}>
                 <label htmlFor='password' style={{"fontWeight": "bold"}}>Password: </label>
                 <FaLock style={{paddingRight: ".5rem"}}/>
                 <input 
@@ -65,7 +65,7 @@ const Login = ({login, error, setError}) => {
                 name="password" 
                 id="password"></input>
             </div>
-            {!error && <button>Login</button>}
+            {!error && <button style={{marginTop: "1rem"}}>Login</button>}
                 
         </div>
 
